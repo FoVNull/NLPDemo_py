@@ -1,0 +1,16 @@
+url = "https://hotels.ctrip.com/Domestic/tool/AjaxHotelCommentList.aspx?MasterHotelID=441351&hotel=441351&property=0&card=0&cardpos=0&NewOpenCount=0&AutoExpiredCount=0&RecordCount=532&OpenDate=2018-08-01&currentPage=1&orderBy=2&viewVersion=c&eleven=2bb24bf969aac0997954bd24b61002c39f76a3be08300f7b1879d4ffe93114e1_158005213&callback=CAStmsuaNzizHtSuS&_=1591533913799"
+
+    new_url = "https://hotels.ctrip.com/hotel/441351.html?masterhotelid=441351"
+    header = {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-Hans-CN, zh-Hans; q=0.8, en-US; q=0.6, en; q=0.4, ja; q=0.2",
+        "Cache - Control": "no-cache",
+        "Content - Type": "application/x-www-form-urlencoded;charset=utf-8",
+        "Cookie": "ASP.NET_SessionId=imwccpwxkm5ntyenznp0elde; OID_ForOnlineHotel=1591530030419nh91b1591530030471102003; hoteluuid=qFfS2a4H7DbZVhdn; hoteluuidkeys=S9aJ3pe7Te4PvAnwdY0YpkYGFEoYbYnoez9E61jk1W1YDYUDKtFwoAvH4wqYsY1pKL4KazvlLjFYHYUTrQtWTFrUlj8Y1YGBjHMr0le19KkSv0prgkYGgjb1yPYzYh0v6XwqtyntjoGvmPeFgYhfjN3yOYmY9Y1Y0zvG1emDYM1if9Y0YBYQY9YkAwkTyX7xmfj7rS4Y4LJbPyXrgZjB8eTDjhbKFfjotwaDx61x4nYgcihSwBaj3sEP4J4ZWXojbrGLJ4XifFw1ZvfcRTzjcQYQzjtrGUy9tiBmwQMRS4EhXjBZx9sxOaEDAEtGELFWdGezGwBtEgSjmfecLigPYf1roAE3ty76va6iOZELFytPvUYHYmDYAGiAOi5QiQDjaYqYoljFcEPnRgBvbgy4Zv3lvPDRlYPY3bRqMJHSvqcRUnJzaiPURD7yUoy8ny7MitFyFsYlYmYhpJtkymDvLDJctYQ1E9TE4dvahyF3J5NJkdeLhjDlKF3yc9Y6YaY6nRaLJGUv8nRXGJSBiHGWfaW9si0AWUQEN5RklvbYpYsQjFLwNQvT8; hotelhst=50349362; magicid=p0yklGor8ECHvfSzt9sR0qo05K6h+s/r0D6Y3OsTZM3BaLSQv4yIN4/TI76Mhhde; HotelDomesticVisitedHotels1=441351=0,0,4.5,532,/200h1900000188dw2D693.jpg,&425164=0,0,4.2,2846,/hotel/53000/52741/941abc93388f496cb660691cf8b48bde.jpg,&346403=0,0,4.7,11492,/200214000000w4sorF865.jpg,; _bfi=p1%3D102003%26p2%3D102003%26v1%3D9%26v2%3D8; appFloatCnt=9; _jzqco=%7C%7C%7C%7C1591530035847%7C1.767702392.1591530033460.1591531671701.1591531780784.1591531671701.1591531780784.undefined.0.0.9.9; _bfs=1.9; MKT_Pagesource=PC; _RDG=28fd50f25290b52436195608b256b10742; _gid=GA1.2.949709580.1591530120; MKT_CKID=1591530033457.mzlfe.s7pr; _ga=GA1.2.1410332548.1591530120; _bfa=1.1591530030419.nh91b.1.1591530030419.1591530030419.1.9; _RGUID=92104787-6470-4e13-892a-e8054f56c965; __zpspc=9.1.1591530033.1591531780.9%234%7C%7C%7C%7C%7C%23; _abtest_userid=693f5fc2-91b6-40cb-b5f1-cef921b1d655; _RSG=Ju4SaTuHG89bbiLFL0wga8; MKT_CKID_LMT=1591530033458; _RF1=117.136.45.1",
+        "Host": "hotels.ctrip.com",
+        "If-Modified - Since": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Referer": "https://hotels.ctrip.com/hotel/441351.html",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                        "Chrome/70.0.3538.102 Safari/537.36 Edge/18.18362 ",
+    }
