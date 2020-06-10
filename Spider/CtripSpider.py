@@ -2,10 +2,14 @@ from selenium import webdriver
 from selenium.common.exceptions import JavascriptException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+import requests
+from bs4 import BeautifulSoup
 from time import sleep
 import pandas as pd
 import os
 
+
+# 后续更新：https://github.com/FoVNull/NLPDemo_py/tree/master/Spider
 class CtripSpider:
     def __init__(self, keywords):
         self.infoList = []
@@ -94,17 +98,35 @@ def writeCSV(infoList: list, location: str, index: int):
         df.to_csv(location, encoding='utf8', index=False)
 
 
+def dropDuplicates(path: str):
+    df = pd.read_csv(path + "/comment.csv")
+    df.drop_duplicates(inplace=True)
+    df.to_csv(path + "/comment_1.csv", encoding='utf8', index=False)
+
+
 if __name__ == '__main__':
     keywords = ["图片", "照片"]
     spider = CtripSpider(keywords)
     count = 0
-    for i in range(13002, 30000):  # 范围估计在12000~80000，不过这不太重要，大概就好^_^
+    # 16100
+    for i in range(15600, 16000):  # 范围估计在12000~80000，不过这不太重要，大概就好^_^
         url = "https://hotels.ctrip.com/hotel/"+str(i)+".html"
-        spider.hotelCommentSpider(url, i)
-        size = len(spider.infoList)
-        if size != count:
-            count = size; print(i, count)
-        if i%100 == 0:
-            writeCSV(spider.infoList, "Resources/comment.csv", i)
-            spider.infoList.clear()
-    if len(spider.infoList) > 0: writeCSV(spider.infoList, "Resources/comment.csv", 2)
+
+        # 校验是否存在该id的酒店
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, 'lxml', from_encoding='utf-8')
+        hotelName = soup.select(".cn_n")
+        hotelName = str(hotelName)
+        hotelName = hotelName[1:-6]
+        flag = hotelName.find(">") == len(hotelName) - 1
+
+        if not flag:
+            spider.hotelCommentSpider(url, i)
+            size = len(spider.infoList)
+            if i%100 == 0:
+                # writeCSV(spider.infoList, "Resources/comment.csv", i)
+                spider.infoList.clear()
+            if size != count:
+                count = size; print(count, end=" ==>  ")
+        print(str(i)+"/20000")
+    # if len(spider.infoList) > 0: writeCSV(spider.infoList, "Resources/comment.csv", 2)
