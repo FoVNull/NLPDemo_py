@@ -124,9 +124,9 @@ if __name__ == '__main__':
             spider.hotelCommentSpider(url, i)
             size = len(spider.infoList)
             if i%100 == 0:
-                # writeCSV(spider.infoList, "Resources/comment.csv", i)
+                writeCSV(spider.infoList, "./Resources/comment.csv", i)
                 spider.infoList.clear()
             if size != count:
                 count = size; print(count, end=" ==>  ")
         print(str(i)+"/20000")
-    # if len(spider.infoList) > 0: writeCSV(spider.infoList, "Resources/comment.csv", 2)
+    if len(spider.infoList) > 0: writeCSV(spider.infoList, "./Resources/comment.csv", 2)
