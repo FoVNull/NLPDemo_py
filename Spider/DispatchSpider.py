@@ -40,7 +40,7 @@ def dispatch(begin: int, end: int, threadID):
         soup = BeautifulSoup(response.content, 'lxml', from_encoding='utf-8')
         hotelName = soup.select(".cn_n")
         hotelName = str(hotelName)
-        hotelName = hotelName[1:-6]
+        hotelName = hotelName[:-6]
         flag = hotelName.find(">") == len(hotelName) - 1
 
         print(threadID, ":", i, "/", end)

@@ -1,23 +1,12 @@
 import pandas as pd
 
 from Spider.DispatchSpider import DispatchSpider
-from Spider.WordCloud import WordCloud
-from Spider.WordCount import WordStatistic
 
 
 def dropDuplicates(path: str):
     df = pd.read_csv(path + "/comment.csv")
     df.drop_duplicates(inplace=True)
     df.to_csv(path + "/comment_1#.csv", encoding='utf8', index=False)
-
-
-def generateWCloud():
-    ws = WordStatistic("../Resources/comment_1.csv")
-    counter = ws.count()
-    filtered = ws.filterStopwords(counter, "../Resources/stopwords.txt")
-
-    wc = WordCloud(filtered)
-    wc.drawCloud("../Resources/stopwords.txt")
 
 
 if __name__ == '__main__':
@@ -27,5 +16,3 @@ if __name__ == '__main__':
         begin = 20001 + i * threadCapacity
         dispather = DispatchSpider(i, begin, begin + threadCapacity)
         dispather.start()
-
-    # generateWCloud()

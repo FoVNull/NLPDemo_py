@@ -2,8 +2,6 @@ import collections
 import wordcloud
 import matplotlib.pyplot as plt
 
-from Spider.WordCount import WordStatistic
-
 
 class WordCloud:
     def __init__(self, counter: collections.Counter):

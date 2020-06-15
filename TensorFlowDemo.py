@@ -100,7 +100,7 @@ def modelTraining():  # 模型训练测试
     model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
     model.summary()
 
-    num_epochs = 30
+    num_epochs = 5
     history = model.fit(padded_train, labels_train, epochs=num_epochs,
                         validation_data=(padded_test, labels_test), verbose=2)
 
