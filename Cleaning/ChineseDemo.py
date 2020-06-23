@@ -12,7 +12,7 @@ class ChineseFilter:
     """
     @staticmethod
     def filterText(s: str) -> list:
-        texts = [u"啊a1446呃呃OK⭕🎶",
+        texts = [u"啊a1446呃呃OK⭕🎶步品破茶",
                  u"点击http://www.hikki.top网址",
                  u"链接ed2k://|file|dld-021.avi|1016078437|620703E6CD6F00BF67102544D6BB00C4|/",
                  u"啊啊啊✨ ​​​好🌹",

@@ -1,0 +1,28 @@
+import enum
+
+
+class Languages(enum.Enum):
+    Arabic = "arabic"
+    Azerbaijani = "azerbaijani"
+    Danish = "danish"
+    Dutch = "dutch"
+    English = "english"
+    Finnish = "finnish"
+    French = "french"
+    German = "german"
+    Greek = "greek"
+    Hungarian = "hungarian"
+    Indonesian = "indonesian"
+    Italian = "italian"
+    Kazakh = "kazakh"
+    Nepali = "nepali"
+    Norwegian = "norwegian"
+    Portuguese = "portuguese"
+    Romanian = "romanian"
+    Russian = "russian"
+    Slovene = "slovene"
+    Spanish = "spanish"
+    Swedish = "swedish"
+    Tajik = "tajik"
+    Turkish = "turkish"
+    Others = "others"
