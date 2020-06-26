@@ -2,14 +2,6 @@ import re
 
 
 class ChineseFilter:
-    """
-    # ひらがなの抽出
-    hiragana = re.findall("[ぁ-ん]", txt)
-    # カタカナの抽出
-    katakana = re.findall("[ァ-ン]", txt)
-    # 漢字の抽出
-    kanji = re.findall("[一-龥]", txt)
-    """
     @staticmethod
     def filterText(s: str) -> list:
         texts = [u"啊a1446呃呃OK⭕🎶步品破茶",

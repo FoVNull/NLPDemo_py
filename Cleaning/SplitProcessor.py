@@ -3,7 +3,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
-import en_core_web_sm
 import jieba
 
 from WordCloudDemo import WordStatistic
@@ -38,28 +37,6 @@ class SplitProcessor:
                 word2 = wordnet_lemmatizer.lemmatize(word1, pos="v")
                 word3 = wordnet_lemmatizer.lemmatize(word2, pos=("a"))
                 lemma_word.append(word3)
-            print(lemma_word)
-
-    def spaCyRestore(self):
-        nlp = en_core_web_sm.load()
-        for text in self.contents:
-            doc = nlp(text)
-
-            # nlp.vocab[token]中需要str而非spacy.tokens.token.Token，所以新建一个list
-            word_list = []
-            for token in doc:
-                word_list.append(token.text)
-
-            filtered = ""
-            for word in word_list:
-                filteredWord = nlp.vocab[word]
-                if not filteredWord.is_stop: filtered += filteredWord.text+" "
-
-            lemma_word = []
-            doc = nlp(filtered)
-            for token in doc:
-                lemma_word.append(token.lemma_)
-            # -PRON-是代词符号
             print(lemma_word)
 
     def chineseSplit(self):
