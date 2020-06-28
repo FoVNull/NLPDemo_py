@@ -19,7 +19,7 @@ if __name__ == '__main__':
     # processor.restoreToStem()
     # syProcessor.spaCyRestore()
 
-    ipRes = JapaneseFilter.filterText("tweeting")
+    ipRes = JapaneseFilter.filterText("これの産地はアメリカのテキサスです")
     syProcessor = SpacyProcessor(ipRes)
     syProcessor.japaneseSplit()
 

@@ -1,5 +1,7 @@
 import en_core_web_sm
 import spacy
+import ja_core_news_sm
+import ginza
 
 from WordCloudDemo import WordStatistic
 
@@ -11,6 +13,7 @@ class SpacyProcessor:
 
     def spaCyRestore(self):
         nlp = en_core_web_sm.load()
+        print(type(nlp))
         for text in self.contents:
             doc = nlp(text)
 
@@ -33,11 +36,18 @@ class SpacyProcessor:
 
     def japaneseSplit(self):
         # https://www.kaggle.com/lazon282/japanese-stop-words
-        for text in self.contents:
-            nlp = spacy.load('ja_ginza')
-            doc = nlp(text)
-            for sent in doc.sents:
-                for token in sent:
+        # stopSets = WordStatistic.generateStopSets("../Resources/japanese-stopwords.txt")
+
+        # nlp: ginza.Japanese = spacy.load('ja_ginza')  # ginza的model
+        nlp: ginza.Japanese = ja_core_news_sm.load()
+
+        # 自定义停用词
+        # ginza.STOP_WORDS.add("かっこ")
+
+        # nlp.pipe()为generator，利用yield doc缓存执行doc的生成，效率比逐个生成doc高
+        for doc in nlp.pipe(self.contents):
+            for token in doc:
+                if not nlp.vocab[token.text].is_stop:
                     info = [
                         token.i,  # トークン番号
                         token.text,  # テキスト
@@ -48,3 +58,11 @@ class SpacyProcessor:
                         token._.inf  # 活用情報
                     ]
                     print(info)
+
+            # 输出名词
+            # for none in doc.noun_chunks:
+                # print(none)
+
+            # 识别实体
+            # for entity in doc.ents:
+                # print(entity.text, entity.label_)
