@@ -14,14 +14,14 @@ if __name__ == '__main__':
     # processor.chineseSplit()
 
     # enRes = EnglishFilter.filterText("tweet")
-    # syProcessor = SpacyProcessor(enRes)
+    # syProcessor = SpacyProcessor(enRes, Languages.English)
     # processor = SplitProcessor(Languages.English, EnRes)
     # processor.restoreToStem()
-    # syProcessor.spaCyRestore()
+    # syProcessor.englishRestore()
 
     ipRes = JapaneseFilter.filterText("これの産地はアメリカのテキサスです")
-    syProcessor = SpacyProcessor(ipRes)
-    syProcessor.japaneseSplit()
+    syProcessor = SpacyProcessor(ipRes, Languages.Japanese)
+    syProcessor.splitEntity()
 
 
 

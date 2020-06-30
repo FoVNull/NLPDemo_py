@@ -25,4 +25,7 @@ class Languages(enum.Enum):
     Swedish = "swedish"
     Tajik = "tajik"
     Turkish = "turkish"
+
+    Japanese = "japanese"
+    Chinese = "chinese"
     Others = "others"
