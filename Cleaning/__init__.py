@@ -19,10 +19,9 @@ if __name__ == '__main__':
     # processor.restoreToStem()
     # syProcessor.englishRestore()
 
-    ipRes = JapaneseFilter.filterText("これの産地はアメリカのテキサスです")
-    syProcessor = SpacyProcessor(ipRes, Languages.Japanese)
-    syProcessor.splitEntity()
-
+    jpRes = JapaneseFilter.filterText("これの産地はアメリカのテキサスです")
+    syProcessor = SpacyProcessor(jpRes, Languages.Japanese)
+    syProcessor.wordVector()
 
 
 
